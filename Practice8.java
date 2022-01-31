@@ -10,6 +10,7 @@ in the array.
 
 Changes/Improvements:
     - Uses UserScanner class
+    - Loops use Array.length, allowing for Arrays of different lengths
 
 Possible Future Improvements:
 */
@@ -18,17 +19,17 @@ class Practice8 {
     public static void main(String[] args) throws Exception {
 
         // Setup Variables:
-        int[] randIntArray = new int[10];
+        int[] randIntArray = new int[20];
         int n;
 
         // Seed the Array with random integers:
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < randIntArray.length; i++) {
             randIntArray[i] = (int) (Math.random() * 20 + 1);
         }
 
         // Display the contents of the Array:
         System.out.print("The array contains ");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < randIntArray.length; i++) {
             System.out.print(randIntArray[i] + " ");
         }
         System.out.println();
@@ -45,7 +46,7 @@ class Practice8 {
         }
 
         // Display every Nth item in the Array:
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < randIntArray.length; i++) {
             // if mod of index+1 = 0, then print:
             if ((i + 1) % n == 0) {
                 System.out.print(randIntArray[i] + " ");
